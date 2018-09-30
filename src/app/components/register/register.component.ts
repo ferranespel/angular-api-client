@@ -13,6 +13,7 @@ export class RegiterComponent implements OnInit {
 	public title: string;
 	public user:User;
 	public status: string;
+	public ktext: string;
 	constructor(
 		private _route: ActivatedRoute,
 		private _router: Router,
@@ -20,9 +21,11 @@ export class RegiterComponent implements OnInit {
 	) {
 		this.title = 'Registrate';	
 		this.user = new User(1, 'ROLE_USER', '', '', '', '');
+		this.ktext = 'key-working';
 	}
 	ngOnInit(){
 		console.log('register.component cargado correctamente!');
+		localStorage.setItem( 'key' , 'new setup');
 	}
 
 	onSubmit(form){
