@@ -5,6 +5,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
 import { RegiterComponent } from './components/register/register.component';
 
+declare module "@angular/core" {
+    interface ModuleWithProviders<T = any> {
+        ngModule: Type<T>;
+        providers?: Provider[];
+    }
+}
+
 const appRoutes: Routes = [
 	{path:'', component: LoginComponent},
 	{path:'login', component: LoginComponent},
